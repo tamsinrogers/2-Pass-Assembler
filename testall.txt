@@ -1,0 +1,88 @@
+start:
+
+
+movei 1 RA
+load ra rb
+loada rc rb
+store rb 00000011
+storea rb 00000011
+
+push rd
+pop ra
+oport rd
+iport ra
+
+movei 1 ra
+movei 1 rb
+add ra rb rc
+sub ra rb rc
+and ra rb rc
+or ra rb rc
+xor ra rb rc
+movei 3 rc
+shiftl ra rc
+shiftr ra rc
+rotl ra rc
+rotr ra rc
+move ra rc
+
+movei rb 10
+movei rd 1
+
+loop:
+call sum
+halt
+
+sum:
+add ra rc ra	
+sub rb rd rb
+
+braz breakout	
+call sum
+
+movei rb 10
+movei rd 1
+
+loop:
+call sum
+halt
+
+sum2:
+add ra rc ra	
+sub rb rd rb
+
+bran breakout	
+call sum2
+
+movei rb 10
+movei rd 1
+
+loop:
+call sum
+halt
+
+sum3:
+add ra rc ra	
+sub rb rd rb
+
+brao breakout	
+call sum3
+
+movei rb 10
+movei rd 1
+
+loop:
+call sum
+halt
+
+sum4:
+add ra rc ra	
+sub rb rd rb
+
+brac breakout	
+call sum4
+
+
+breakout:
+return
+end

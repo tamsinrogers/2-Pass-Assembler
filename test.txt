@@ -1,0 +1,4 @@
+start:
+movei 8 RA
+movei 8 RB
+end

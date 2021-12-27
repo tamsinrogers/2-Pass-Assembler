@@ -1,0 +1,14 @@
+start:
+movei 0 RA
+movei 1 RB
+move 10 RC
+loop:
+add RA RB RC
+move RB RA
+move RD RB
+sub RB ir RC
+oport RD
+braz breakout
+bra loop
+breakout:
+end

@@ -1,0 +1,23 @@
+start:
+
+# setup
+movei 1 RA
+movei 0 RB
+movei 1 RC
+movei 10 RD
+
+loop:
+call sum
+halt
+
+sum:
+add RA RB RA	# add the two most recent numbers in the sequence
+add RB RC RB	# add 1 to the value in RB
+sub RD RC RD	# decrement the loop counter
+
+braz breakout	# breakout when RD reaches 0 (end of loop)
+call sum
+
+breakout:
+return
+end
